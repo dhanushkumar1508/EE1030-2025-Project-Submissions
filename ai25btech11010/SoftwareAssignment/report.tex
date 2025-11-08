@@ -8,7 +8,6 @@
 \setlength{\headheight}{1cm}
 \setlength{\headsep}{0mm}
 
-% ---------- Core packages ----------
 \usepackage{amsmath,amssymb,amsfonts,amsthm}
 \usepackage{graphicx}
 \usepackage{xcolor}
@@ -25,7 +24,7 @@
 \graphicspath{{./figs/}}
 \usepackage{subcaption}
 
-% ---------- Section formatting ----------
+
 \usepackage{titlesec}
 \titleformat{\section}
   {\normalfont\bfseries}
@@ -33,10 +32,9 @@
   {0pt}{}
 \titlespacing*{\section}{0pt}{1.5em}{1em}
 
-% ---------- Document ----------
+
 \begin{document}
 
-% ---------- TITLE PAGE ----------
 \begin{titlepage}
     \centering
     \vspace*{3cm}
@@ -50,15 +48,27 @@
     {\large \today}
 \end{titlepage}
 
-% ---------- TABLE OF CONTENTS ----------
+
 \newpage
 \renewcommand{\contentsname}{\centering \LARGE \textbf{Contents}}
 \tableofcontents
 \thispagestyle{empty}
 
-% ---------- REPORT START ----------
+
 \newpage
 \setcounter{page}{1}
+\section{Aim}
+
+The aim of this assignment is to implement image compression using the \textbf{Truncated Singular Value Decomposition (SVD)} technique.  
+The objective is to approximate a given grayscale image matrix by retaining only the top $k$ singular values and corresponding singular vectors, thereby achieving data compression with minimal loss of image quality.  
+
+The assignment also aims to:
+\begin{itemize}
+    \item Understand the mathematical foundation of SVD and its role in low-rank matrix approximation.
+    \item Implement the \textbf{Power Iteration with Deflation} algorithm to compute the top-$k$ singular values efficiently.
+    \item Compare the performance of the implemented method with other SVD algorithms in terms of computational efficiency and accuracy.
+
+\end{itemize}
 
 \section{Summary of Strang's Video}
 
@@ -210,11 +220,7 @@ Algorithm:
     \textit{Reason not used:} More complex to implement than Power Iteration.
 \end{itemize}
 
-% --- REQUIRED PACKAGES (Include these lines in your document's Preamble) ---
-% \usepackage{graphicx}
-% \usepackage{caption}
-% \usepackage{subcaption} 
-% --------------------------------------------------------------------------
+
 
 \section{Reconstructed Images for Different k}
 \subsection{einstein}
@@ -230,7 +236,7 @@ Algorithm:
 \begin{figure}[H]
    \begin{subfigure}[b]{0.5\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{../figs/einstein_k_5.png} % replace with your actual k=5 image
+        \includegraphics[width=\textwidth]{../figs/einstein_k_5.png} 
         \caption*{Reconstructed Image k=5}
         \label{fig:k5}
     \end{subfigure}
@@ -238,7 +244,7 @@ Algorithm:
     % k = 20
     \begin{subfigure}[b]{0.5\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{../figs/einstein_k_20.png} % replace with your actual k=20 image
+        \includegraphics[width=\textwidth]{../figs/einstein_k_20.png} 
         \caption*{Reconstructed Image  k=20}
         \label{fig:k20}
     \end{subfigure}
@@ -247,7 +253,7 @@ Algorithm:
 \begin{figure}[H]
 \begin{subfigure}[b]{0.5\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{../figs/einstein_k_50.png} % replace with your actual k=5 image
+        \includegraphics[width=\textwidth]{../figs/einstein_k_50.png} 
         \caption*{Reconstructed Image  k=50}
         \label{fig:k5}
     \end{subfigure}
@@ -255,7 +261,7 @@ Algorithm:
     % k = 20
     \begin{subfigure}[b]{0.5\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{../figs/einstein_k_100.png} % replace with your actual k=20 image
+        \includegraphics[width=\textwidth]{../figs/einstein_k_100.png} 
         \caption*{Reconstructed Image  k=100}
         \label{fig:k20}
     \end{subfigure}
@@ -283,7 +289,7 @@ Algorithm:
 \begin{figure}[H]
    \begin{subfigure}[b]{0.5\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{../figs/globe_k_5.png} % replace with your actual k=5 image
+        \includegraphics[width=\textwidth]{../figs/globe_k_5.png} 
         \caption*{Reconstructed Image k=5}
         \label{fig:k5}
     \end{subfigure}
@@ -291,7 +297,7 @@ Algorithm:
     % k = 20
     \begin{subfigure}[b]{0.5\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{../figs/globe_k_20.png} % replace with your actual k=20 image
+        \includegraphics[width=\textwidth]{../figs/globe_k_20.png} 
         \caption*{Reconstructed Image  k=20}
         \label{fig:k20}
     \end{subfigure}
@@ -300,7 +306,7 @@ Algorithm:
 \begin{figure}[H]
 \begin{subfigure}[b]{0.5\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{../figs/globe_k_50.png} % replace with your actual k=5 image
+        \includegraphics[width=\textwidth]{../figs/globe_k_50.png} 
         \caption*{Reconstructed Image  k=50}
         \label{fig:k5}
     \end{subfigure}
@@ -308,7 +314,7 @@ Algorithm:
     % k = 20
     \begin{subfigure}[b]{0.5\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{../figs/globe_k_100.png} % replace with your actual k=20 image
+        \includegraphics[width=\textwidth]{../figs/globe_k_100.png} 
         \caption*{Reconstructed Image  k=100}
         \label{fig:k20}
     \end{subfigure}
@@ -336,7 +342,7 @@ Algorithm:
 \begin{figure}[H]
    \begin{subfigure}[b]{0.5\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{../figs/greyscale_k_5.png} % replace with your actual k=5 image
+        \includegraphics[width=\textwidth]{../figs/greyscale_k_5.png} 
         \caption*{Reconstructed Image k=5}
         \label{fig:k5}
     \end{subfigure}
@@ -344,7 +350,7 @@ Algorithm:
     % k = 20
     \begin{subfigure}[b]{0.5\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{../figs/greyscale_k_20.png} % replace with your actual k=20 image
+        \includegraphics[width=\textwidth]{../figs/greyscale_k_20.png} 
         \caption*{Reconstructed Image  k=20}
         \label{fig:k20}
     \end{subfigure}
@@ -353,7 +359,7 @@ Algorithm:
 \begin{figure}[H]
 \begin{subfigure}[b]{0.5\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{../figs/greyscale_k_50.png} % replace with your actual k=5 image
+        \includegraphics[width=\textwidth]{../figs/greyscale_k_50.png} 
         \caption*{Reconstructed Image  k=50}
         \label{fig:k5}
     \end{subfigure}
@@ -361,7 +367,7 @@ Algorithm:
     % k = 20
     \begin{subfigure}[b]{0.5\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{../figs/greyscale_k_100.png} % replace with your actual k=20 image
+        \includegraphics[width=\textwidth]{../figs/greyscale_k_100.png} 
         \caption*{Reconstructed Image  k=100}
         \label{fig:k20}
     \end{subfigure}

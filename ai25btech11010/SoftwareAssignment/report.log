@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.8.1)  8 NOV 2025 23:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.8.1)  9 NOV 2025 01:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -636,24 +636,24 @@ LaTeX Warning: Label `' multiply defined.
 )
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
 
 -- Lines per column: 45 (approximate, difference = 0.60239pt).
 *geometry* driver: auto-detecting
@@ -714,16 +714,16 @@ e
 ))
 \symgns@font=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `gns@font' in version `bold'
-(Font)                  TS1/ptm/m/n --> TS1/ptm/b/n on input line 37.
-Package gensymb Info: Math companion symbols declared on input line 37.
-LaTeX Info: Redefining \degree on input line 37.
-LaTeX Info: Redefining \celsius on input line 37.
+(Font)                  TS1/ptm/m/n --> TS1/ptm/b/n on input line 36.
+Package gensymb Info: Math companion symbols declared on input line 36.
+LaTeX Info: Redefining \degree on input line 36.
+LaTeX Info: Redefining \celsius on input line 36.
 Package gensymb Info: Using text companion symbols for \degree, \celsius and \p
-erthousand on input line 37.
-LaTeX Info: Redefining \ohm on input line 37.
-Package gensymb Info: Using \textohm for \ohm on input line 37.
-Package gensymb Info: Using \textmu for \micro on input line 37.
-Package hyperref Info: Link coloring OFF on input line 37.
+erthousand on input line 36.
+LaTeX Info: Redefining \ohm on input line 36.
+Package gensymb Info: Using \textohm for \ohm on input line 36.
+Package gensymb Info: Using \textmu for \micro on input line 36.
+Package hyperref Info: Link coloring OFF on input line 36.
 
 (./report.out) (./report.out)
 \@outlinefile=\write3
@@ -736,17 +736,17 @@ Package caption Info: End \AtBeginDocument code.
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-di
 st/fonts/enc/dvips/base/8r.enc}] (./report.toc
-LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 3.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 3
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 4
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
@@ -760,204 +760,208 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.106 \end{align}
+l.101 \end{align}
                   [1]
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 13
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 14
 1.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 ) [2] [3]
-<./figs/../figs/einstein.jpg, id=125, 186.6975pt x 182.6825pt>
+<./figs/../figs/einstein.jpg, id=130, 186.6975pt x 182.6825pt>
 File: ./figs/../figs/einstein.jpg Graphic file (type jpg)
 <use ./figs/../figs/einstein.jpg>
-Package pdftex.def Info: ./figs/../figs/einstein.jpg  used on input line 225.
+Package pdftex.def Info: ./figs/../figs/einstein.jpg  used on input line 231.
 (pdftex.def)             Requested size: 218.5194pt x 213.82964pt.
-<./figs/../figs/einstein_k_5.png, id=126, 134.4222pt x 131.5314pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [4]
+<./figs/../figs/einstein_k_5.png, id=135, 134.4222pt x 131.5314pt>
 File: ./figs/../figs/einstein_k_5.png Graphic file (type png)
 <use ./figs/../figs/einstein_k_5.png>
 Package pdftex.def Info: ./figs/../figs/einstein_k_5.png  used on input line 23
-3.
+9.
 (pdftex.def)             Requested size: 182.09764pt x 178.20195pt.
-<./figs/../figs/einstein_k_20.png, id=128, 134.4222pt x 131.5314pt>
+<./figs/../figs/einstein_k_20.png, id=137, 134.4222pt x 131.5314pt>
 File: ./figs/../figs/einstein_k_20.png Graphic file (type png)
 <use ./figs/../figs/einstein_k_20.png>
 Package pdftex.def Info: ./figs/../figs/einstein_k_20.png  used on input line 2
-41.
+47.
 (pdftex.def)             Requested size: 182.09764pt x 178.20195pt.
 
-Overfull \hbox (2.29994pt too wide) in paragraph at lines 231--245
+Overfull \hbox (2.29994pt too wide) in paragraph at lines 237--251
 [][]  [] 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [4 <./figs/../figs/einstein.jpg>]
-<./figs/../figs/einstein_k_50.png, id=134, 134.4222pt x 131.5314pt>
+<./figs/../figs/einstein_k_50.png, id=138, 134.4222pt x 131.5314pt>
 File: ./figs/../figs/einstein_k_50.png Graphic file (type png)
 <use ./figs/../figs/einstein_k_50.png>
 Package pdftex.def Info: ./figs/../figs/einstein_k_50.png  used on input line 2
-50.
+56.
 (pdftex.def)             Requested size: 182.09764pt x 178.20195pt.
-<./figs/../figs/einstein_k_100.png, id=135, 134.4222pt x 131.5314pt>
+<./figs/../figs/einstein_k_100.png, id=139, 134.4222pt x 131.5314pt>
 File: ./figs/../figs/einstein_k_100.png Graphic file (type png)
 <use ./figs/../figs/einstein_k_100.png>
 Package pdftex.def Info: ./figs/../figs/einstein_k_100.png  used on input line 
-258.
+264.
 (pdftex.def)             Requested size: 182.09764pt x 178.20195pt.
 
-Overfull \hbox (2.29994pt too wide) in paragraph at lines 248--262
+Overfull \hbox (2.29994pt too wide) in paragraph at lines 254--268
 [][]  [] 
  []
 
-<./figs/../figs/einstein_k_200.png, id=136, 134.4222pt x 131.5314pt>
+
+Underfull \vbox (badness 4205) has occurred while \output is active []
+
+ [5 <./figs/../figs/einstein.jpg> <./figs/../figs/einstein_k_5.png> <./figs/../
+figs/einstein_k_20.png>]
+<./figs/../figs/einstein_k_200.png, id=149, 134.4222pt x 131.5314pt>
 File: ./figs/../figs/einstein_k_200.png Graphic file (type png)
 <use ./figs/../figs/einstein_k_200.png>
 Package pdftex.def Info: ./figs/../figs/einstein_k_200.png  used on input line 
-269.
+275.
 (pdftex.def)             Requested size: 182.09764pt x 178.20195pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [5 <./figs/../figs/einstein_k_5.png> <./figs/../figs/einstein_k_20.png> <./fig
-s/../figs/einstein_k_50.png> <./figs/../figs/einstein_k_100.png>]
-<./figs/../figs/globe.jpg, id=148, 843.15pt x 882.29625pt>
+<./figs/../figs/globe.jpg, id=150, 843.15pt x 882.29625pt>
 File: ./figs/../figs/globe.jpg Graphic file (type jpg)
 <use ./figs/../figs/globe.jpg>
-Package pdftex.def Info: ./figs/../figs/globe.jpg  used on input line 278.
+Package pdftex.def Info: ./figs/../figs/globe.jpg  used on input line 284.
 (pdftex.def)             Requested size: 218.5194pt x 228.66463pt.
-<./figs/../figs/globe_k_5.png, id=149, 607.068pt x 635.2533pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6 <./figs/../figs/einstein_k_50.png> <./figs/../figs/einstein_k_100.png> <./f
+igs/../figs/einstein_k_200.png>]
+<./figs/../figs/globe_k_5.png, id=160, 607.068pt x 635.2533pt>
 File: ./figs/../figs/globe_k_5.png Graphic file (type png)
 <use ./figs/../figs/globe_k_5.png>
-Package pdftex.def Info: ./figs/../figs/globe_k_5.png  used on input line 286.
+Package pdftex.def Info: ./figs/../figs/globe_k_5.png  used on input line 292.
 (pdftex.def)             Requested size: 182.09764pt x 190.54837pt.
-<./figs/../figs/globe_k_20.png, id=150, 607.068pt x 635.2533pt>
+<./figs/../figs/globe_k_20.png, id=161, 607.068pt x 635.2533pt>
 File: ./figs/../figs/globe_k_20.png Graphic file (type png)
 <use ./figs/../figs/globe_k_20.png>
-Package pdftex.def Info: ./figs/../figs/globe_k_20.png  used on input line 294.
+Package pdftex.def Info: ./figs/../figs/globe_k_20.png  used on input line 300.
 
 (pdftex.def)             Requested size: 182.09764pt x 190.54837pt.
 
-Overfull \hbox (2.29994pt too wide) in paragraph at lines 284--298
+Overfull \hbox (2.29994pt too wide) in paragraph at lines 290--304
 [][]  [] 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [6 <./figs/../figs/einstein_k_200.png> <./figs/../figs/globe.jpg>]
-<./figs/../figs/globe_k_50.png, id=158, 607.068pt x 635.2533pt>
+<./figs/../figs/globe_k_50.png, id=162, 607.068pt x 635.2533pt>
 File: ./figs/../figs/globe_k_50.png Graphic file (type png)
 <use ./figs/../figs/globe_k_50.png>
-Package pdftex.def Info: ./figs/../figs/globe_k_50.png  used on input line 303.
+Package pdftex.def Info: ./figs/../figs/globe_k_50.png  used on input line 309.
 
 (pdftex.def)             Requested size: 182.09764pt x 190.54837pt.
-<./figs/../figs/globe_k_100.png, id=159, 607.068pt x 635.2533pt>
+<./figs/../figs/globe_k_100.png, id=163, 607.068pt x 635.2533pt>
 File: ./figs/../figs/globe_k_100.png Graphic file (type png)
 <use ./figs/../figs/globe_k_100.png>
-Package pdftex.def Info: ./figs/../figs/globe_k_100.png  used on input line 311
+Package pdftex.def Info: ./figs/../figs/globe_k_100.png  used on input line 317
 .
 (pdftex.def)             Requested size: 182.09764pt x 190.54837pt.
 
-Overfull \hbox (2.29994pt too wide) in paragraph at lines 301--315
+Overfull \hbox (2.29994pt too wide) in paragraph at lines 307--321
 [][]  [] 
  []
 
-<./figs/../figs/globe_k_200.png, id=160, 607.068pt x 635.2533pt>
+
+Underfull \vbox (badness 3471) has occurred while \output is active []
+
+ [7 <./figs/../figs/globe.jpg> <./figs/../figs/globe_k_5.png> <./figs/../figs/g
+lobe_k_20.png>]
+<./figs/../figs/globe_k_200.png, id=173, 607.068pt x 635.2533pt>
 File: ./figs/../figs/globe_k_200.png Graphic file (type png)
 <use ./figs/../figs/globe_k_200.png>
-Package pdftex.def Info: ./figs/../figs/globe_k_200.png  used on input line 322
+Package pdftex.def Info: ./figs/../figs/globe_k_200.png  used on input line 328
 .
 (pdftex.def)             Requested size: 182.09764pt x 190.54837pt.
+<./figs/../figs/greyscale.png, id=174, 1027.84pt x 1027.84pt>
+File: ./figs/../figs/greyscale.png Graphic file (type png)
+<use ./figs/../figs/greyscale.png>
+Package pdftex.def Info: ./figs/../figs/greyscale.png  used on input line 337.
+(pdftex.def)             Requested size: 218.5194pt x 218.51897pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [7 <./figs/../figs/globe_k_5.png> <./figs/../figs/globe_k_20.png> <./figs/../f
-igs/globe_k_50.png> <./figs/../figs/globe_k_100.png>]
-<./figs/../figs/greyscale.png, id=171, 1027.84pt x 1027.84pt>
-File: ./figs/../figs/greyscale.png Graphic file (type png)
-<use ./figs/../figs/greyscale.png>
-Package pdftex.def Info: ./figs/../figs/greyscale.png  used on input line 331.
-(pdftex.def)             Requested size: 218.5194pt x 218.51897pt.
-<./figs/../figs/greyscale_k_5.png, id=172, 740.0448pt x 740.0448pt>
+ [8 <./figs/../figs/globe_k_50.png> <./figs/../figs/globe_k_100.png> <./figs/..
+/figs/globe_k_200.png>]
+<./figs/../figs/greyscale_k_5.png, id=184, 740.0448pt x 740.0448pt>
 File: ./figs/../figs/greyscale_k_5.png Graphic file (type png)
 <use ./figs/../figs/greyscale_k_5.png>
 Package pdftex.def Info: ./figs/../figs/greyscale_k_5.png  used on input line 3
-39.
+45.
 (pdftex.def)             Requested size: 182.09764pt x 182.09737pt.
-<./figs/../figs/greyscale_k_20.png, id=173, 740.0448pt x 740.0448pt>
+<./figs/../figs/greyscale_k_20.png, id=185, 740.0448pt x 740.0448pt>
 File: ./figs/../figs/greyscale_k_20.png Graphic file (type png)
 <use ./figs/../figs/greyscale_k_20.png>
 Package pdftex.def Info: ./figs/../figs/greyscale_k_20.png  used on input line 
-347.
+353.
 (pdftex.def)             Requested size: 182.09764pt x 182.09737pt.
 
-Overfull \hbox (2.29994pt too wide) in paragraph at lines 337--351
+Overfull \hbox (2.29994pt too wide) in paragraph at lines 343--357
 [][]  [] 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [8 <./figs/../figs/globe_k_200.png> <./figs/../figs/greyscale.png (PNG copy)>]
-<./figs/../figs/greyscale_k_50.png, id=182, 740.0448pt x 740.0448pt>
+<./figs/../figs/greyscale_k_50.png, id=186, 740.0448pt x 740.0448pt>
 File: ./figs/../figs/greyscale_k_50.png Graphic file (type png)
 <use ./figs/../figs/greyscale_k_50.png>
 Package pdftex.def Info: ./figs/../figs/greyscale_k_50.png  used on input line 
-356.
+362.
 (pdftex.def)             Requested size: 182.09764pt x 182.09737pt.
-<./figs/../figs/greyscale_k_100.png, id=183, 740.0448pt x 740.0448pt>
+<./figs/../figs/greyscale_k_100.png, id=187, 740.0448pt x 740.0448pt>
 File: ./figs/../figs/greyscale_k_100.png Graphic file (type png)
 <use ./figs/../figs/greyscale_k_100.png>
 Package pdftex.def Info: ./figs/../figs/greyscale_k_100.png  used on input line
- 364.
+ 370.
 (pdftex.def)             Requested size: 182.09764pt x 182.09737pt.
 
-Overfull \hbox (2.29994pt too wide) in paragraph at lines 354--368
+Overfull \hbox (2.29994pt too wide) in paragraph at lines 360--374
 [][]  [] 
  []
 
-<./figs/../figs/greyscale_k_200.png, id=184, 740.0448pt x 740.0448pt>
-File: ./figs/../figs/greyscale_k_200.png Graphic file (type png)
-<use ./figs/../figs/greyscale_k_200.png>
-Package pdftex.def Info: ./figs/../figs/greyscale_k_200.png  used on input line
- 375.
-(pdftex.def)             Requested size: 182.09764pt x 182.09737pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [9 <./figs/../figs/greyscale_k_5.png> <./figs/../figs/greyscale_k_20.png> <./f
-igs/../figs/greyscale_k_50.png> <./figs/../figs/greyscale_k_100.png>]
-(./tables/einstein.tex)
-<./figs/../figs/einstein_error_vs_k.png, id=195, 578.16pt x 361.35pt>
+ [9 <./figs/../figs/greyscale.png (PNG copy)> <./figs/../figs/greyscale_k_5.png
+> <./figs/../figs/greyscale_k_20.png>]
+<./figs/../figs/greyscale_k_200.png, id=196, 740.0448pt x 740.0448pt>
+File: ./figs/../figs/greyscale_k_200.png Graphic file (type png)
+<use ./figs/../figs/greyscale_k_200.png>
+Package pdftex.def Info: ./figs/../figs/greyscale_k_200.png  used on input line
+ 381.
+(pdftex.def)             Requested size: 182.09764pt x 182.09737pt.
+ (./tables/einstein.tex)
+Underfull \vbox (badness 1584) has occurred while \output is active []
+
+ [10 <./figs/../figs/greyscale_k_50.png> <./figs/../figs/greyscale_k_100.png> <
+./figs/../figs/greyscale_k_200.png>]
+<./figs/../figs/einstein_error_vs_k.png, id=206, 578.16pt x 361.35pt>
 File: ./figs/../figs/einstein_error_vs_k.png Graphic file (type png)
 <use ./figs/../figs/einstein_error_vs_k.png>
 Package pdftex.def Info: ./figs/../figs/einstein_error_vs_k.png  used on input 
-line 405.
+line 411.
 (pdftex.def)             Requested size: 254.9356pt x 159.33083pt.
+ (./tables/globe.tex)
+<./figs/../figs/globe_error_vs_k.png, id=207, 578.16pt x 361.35pt>
+File: ./figs/../figs/globe_error_vs_k.png Graphic file (type png)
+<use ./figs/../figs/globe_error_vs_k.png>
+Package pdftex.def Info: ./figs/../figs/globe_error_vs_k.png  used on input lin
+e 432.
+(pdftex.def)             Requested size: 182.09764pt x 113.80931pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-(./tables/globe.tex)
-Underfull \vbox (badness 2922) has occurred while \output is active []
-
- [10 <./figs/../figs/greyscale_k_200.png>]
-<./figs/../figs/globe_error_vs_k.png, id=206, 578.16pt x 361.35pt>
-File: ./figs/../figs/globe_error_vs_k.png Graphic file (type png)
-<use ./figs/../figs/globe_error_vs_k.png>
-Package pdftex.def Info: ./figs/../figs/globe_error_vs_k.png  used on input lin
-e 426.
-(pdftex.def)             Requested size: 182.09764pt x 113.80931pt.
- (./tables/greyscale.tex) [11 <./figs/../figs/einstein_error_vs_k.png> <./figs/
-../figs/globe_error_vs_k.png>]
-<./figs/../figs/greyscale_error_vs_k.png, id=217, 578.16pt x 361.35pt>
+(./tables/greyscale.tex) [11 <./figs/../figs/einstein_error_vs_k.png>]
+<./figs/../figs/greyscale_error_vs_k.png, id=220, 578.16pt x 361.35pt>
 File: ./figs/../figs/greyscale_error_vs_k.png Graphic file (type png)
 <use ./figs/../figs/greyscale_error_vs_k.png>
 Package pdftex.def Info: ./figs/../figs/greyscale_error_vs_k.png  used on input
- line 446.
+ line 452.
 (pdftex.def)             Requested size: 254.9356pt x 159.33083pt.
- [12 <./figs/../figs/greyscale_error_vs_k.png>] [13] (./report.aux)
+ [12 <./figs/../figs/globe_error_vs_k.png> <./figs/../figs/greyscale_error_vs_k
+.png>]
+[13] (./report.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -967,13 +971,13 @@ L3 programming layer <2024-01-22>
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: 2CC0425DD8EB1A2317E1D13FCF9CD501;2981.
+(rerunfilecheck)             Checksum: 537B499B13883306CB9CF9CB26B5DEB6;3040.
  ) 
 Here is how much of TeX's memory you used:
- 16254 strings out of 474222
- 259949 string characters out of 5748734
- 1936975 words of memory out of 5000000
- 38234 multiletter control sequences out of 15000+600000
+ 16256 strings out of 474222
+ 259969 string characters out of 5748734
+ 1935975 words of memory out of 5000000
+ 38235 multiletter control sequences out of 15000+600000
  669848 words of font info for 157 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,10n,79p,543b,595s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -990,10 +994,10 @@ ymbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a
 .pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on report.pdf (15 pages, 4997229 bytes).
+Output written on report.pdf (15 pages, 4997585 bytes).
 PDF statistics:
- 304 PDF objects out of 1000 (max. 8388607)
- 217 compressed objects within 3 object streams
- 51 named destinations out of 1000 (max. 500000)
- 250 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 309 PDF objects out of 1000 (max. 8388607)
+ 222 compressed objects within 3 object streams
+ 52 named destinations out of 1000 (max. 500000)
+ 258 words of extra memory for PDF output out of 10000 (max. 10000000)
 
