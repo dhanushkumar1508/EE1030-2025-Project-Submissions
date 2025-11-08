@@ -1,0 +1,18 @@
+\contentsline {section}{\numberline {I}Summary of Strang's Video}{1}{section.1}%
+\contentsline {section}{\numberline {II}Explanation of the Implemented Algorithm}{1}{section.2}%
+\contentsline {subsection}{\numberline {\mbox {II-A}}Mathematical Steps}{1}{subsection.2.1}%
+\contentsline {subsection}{\numberline {\mbox {II-B}}Pseudocode}{2}{subsection.2.2}%
+\contentsline {section}{\numberline {III}Comparison with Other Algorithms}{3}{section.3}%
+\contentsline {subsection}{\numberline {\mbox {III-A}}Why Power Iteration with Deflation Was Chosen}{3}{subsection.3.1}%
+\contentsline {subsection}{\numberline {\mbox {III-B}}Why Other Algorithms Were Not Used}{3}{subsection.3.2}%
+\contentsline {section}{\numberline {IV}Reconstructed Images for Different k}{4}{section.4}%
+\contentsline {subsection}{\numberline {\mbox {IV-A}}einstein}{4}{subsection.4.1}%
+\contentsline {subsection}{\numberline {\mbox {IV-B}}globe}{6}{subsection.4.2}%
+\contentsline {subsection}{\numberline {\mbox {IV-C}}greyscale}{8}{subsection.4.3}%
+\contentsline {section}{\numberline {V} Error Analysis}{10}{section.5}%
+\contentsline {subsection}{\numberline {\mbox {V-A}}einstein}{10}{subsection.5.1}%
+\contentsline {subsection}{\numberline {\mbox {V-B}}globe}{11}{subsection.5.2}%
+\contentsline {subsection}{\numberline {\mbox {V-C}}greyscale}{12}{subsection.5.3}%
+\contentsline {section}{\numberline {VI}Discussion of Trade-offs and Reflections}{12}{section.6}%
+\contentsline {subsection}{\numberline {\mbox {VI-A}}Trade-offs}{12}{subsection.6.1}%
+\contentsline {subsection}{\numberline {\mbox {VI-B}}Reflections on Implementation Choice}{13}{subsection.6.2}%

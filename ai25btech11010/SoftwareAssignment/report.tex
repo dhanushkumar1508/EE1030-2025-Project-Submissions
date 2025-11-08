@@ -1,0 +1,491 @@
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal]{IEEEtran}
+
+\usepackage[a5paper, margin=10mm, onecolumn]{geometry}
+\usepackage{tfrupee}
+
+\setlength{\headheight}{1cm}
+\setlength{\headsep}{0mm}
+
+% ---------- Core packages ----------
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{textcomp}
+\usepackage{gensymb}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{mathtools}
+\usepackage{caption}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\graphicspath{{./figs/}}
+\usepackage{subcaption}
+
+% ---------- Section formatting ----------
+\usepackage{titlesec}
+\titleformat{\section}
+  {\normalfont\bfseries}
+  {\thesection.\ }
+  {0pt}{}
+\titlespacing*{\section}{0pt}{1.5em}{1em}
+
+% ---------- Document ----------
+\begin{document}
+
+% ---------- TITLE PAGE ----------
+\begin{titlepage}
+    \centering
+    \vspace*{3cm}
+    {\LARGE \textbf{Software Assignment Report}\\[1cm]}
+    {\Huge \textbf{Image Compression Using Truncated SVD}\\[2cm]}
+    {\Large \textbf{Name:} Dhanush Kumar A\\[0.5cm]
+    \textbf{Roll Number:} AI25BTECH11010\\[3cm]}
+    {\large Department of Artificial Intelligence\\[0.3cm]
+    Indian Institute of Technology Hyderabad\\[1cm]}
+    \vfill
+    {\large \today}
+\end{titlepage}
+
+% ---------- TABLE OF CONTENTS ----------
+\newpage
+\renewcommand{\contentsname}{\centering \LARGE \textbf{Contents}}
+\tableofcontents
+\thispagestyle{empty}
+
+% ---------- REPORT START ----------
+\newpage
+\setcounter{page}{1}
+
+\section{Summary of Strang's Video}
+
+Professor Gilbert Strang introduces the \textbf{Singular Value Decomposition (SVD)}.  
+He explains that any real matrix $A$ can be written as
+\[
+A = U \Sigma V^T,
+\]
+where $U$ and $V$ are orthogonal matrices, and $\Sigma$ is a diagonal matrix with nonnegative entries.  
+Strang shows that the vectors in $V$ (the right singular vectors) are the eigenvectors of the symmetric matrix $A^T A$:
+\[
+A^T A v_i = \sigma_i^2 v_i.
+\]
+Hence, the eigenvalues of $A^T A$ are the squares of the singular values of $A$.  
+He also explains that the columns of $U$ (the left singular vectors) form an orthonormal basis for the output space, while the columns of $V$ form an orthonormal basis for the input space.
+
+This decomposition helps us understand how a matrix transforms vectors: it first rotates them using $V$, then stretches them by $\Sigma$, and finally rotates again using $U$.  
+Strang emphasizes that the SVD works for any real (even rectangular or non-symmetric) matrix and reveals its essential structure.  
+Through examples and visual explanations, he clarifies how singular values describe the strength of each independent direction in the transformation.  
+Overall, the lecture gives both an algebraic and geometric understanding of the SVD and its importance in mathematics and applications.
+
+
+\section{Explanation of the Implemented Algorithm}
+The algorithm applies Truncated SVD for image compression. Given a grayscale image matrix \( A \in \mathbb{R}^{m \times n} \), we compute:
+\[ A = U \Sigma V^T \] and keep only the top \(k\) singular values.
+\subsection{Mathematical Steps}
+\begin{align}
+&\text{Initialize reconstructed matrix:} \nonumber \\
+&A_k := 0_{m \times n} \nonumber
+\end{align}
+
+\noindent For $i = 1, 2, \dots, k$:
+
+\begin{align}
+&\text{a) Initialize right singular vector } v_i^{(0)} \in \mathbb{R}^n \text{ randomly and normalize:} \nonumber \\
+&v_i^{(0)} := \frac{v_i^{(0)}}{\|v_i^{(0)}\|_2} \nonumber
+\end{align}
+
+\begin{align}
+&\text{b) Power iteration: for } t = 0, 1, \dots, T \nonumber \\
+&y_i^{(t)} := A v_i^{(t)}, \quad
+z_i^{(t)} := A^T y_i^{(t)}, \quad
+v_i^{(t+1)} := \frac{z_i^{(t)}}{\|z_i^{(t)}\|_2} \nonumber \\
+&\text{Stop if } \|v_i^{(t+1)} - v_i^{(t)}\|_2 < \varepsilon \nonumber
+\end{align}
+
+\begin{align}
+&\text{c) Compute singular value and left singular vector:} \nonumber \\
+&\sigma_i := \|A v_i^{(t+1)}\|_2, \quad
+u_i := \frac{A v_i^{(t+1)}}{\sigma_i} \nonumber
+\end{align}
+
+\begin{align}
+&\text{d) Update reconstructed matrix:} \nonumber \\
+&A_k := A_k + \sigma_i u_i v_i^T \nonumber
+\end{align}
+
+\begin{align}
+&\text{e) Deflate original matrix:} \nonumber \\
+&A := A - \sigma_i u_i v_i^T \nonumber
+\end{align}
+
+\begin{align}
+&\text{Return reconstructed matrix: } A_k \nonumber
+\end{align}
+
+
+\subsection{Pseudocode}
+
+\begin{verbatim}
+Input:
+    A          -> m x n matrix
+    k          -> number of top singular values to compute
+    max_iter   -> maximum iterations
+    tolerance  -> convergence threshold
+
+Output:
+    A_k        -> rank-k approximation of A
+
+Algorithm:
+
+1. Initialize A_k <- zero matrix of size m x n
+
+2. For i = 1 to k do:
+       a. Initialize a random vector v of size n
+          Normalize: v <- v / ||v||
+
+       b. Repeat until convergence or max_iter:
+              y <- A * v
+              z <- A^T * y
+              v_new <- z / ||z||
+              if ||v_new - v|| < tolerance then
+                     break
+              end if
+              v <- v_new
+          end repeat
+
+       c. Compute singular value: sigma <- ||A * v||
+          Compute left singular vector: u <- (A * v) / sigma
+
+       d. Update reconstructed matrix:
+              A_k <- A_k + sigma * u * v^T
+
+       e. Deflate original matrix:
+              A <- A - sigma * u * v^T
+
+3. Return A_k
+\end{verbatim}
+
+\section{Comparison with Other Algorithms}
+
+
+\subsection{Why Power Iteration with Deflation Was Chosen}
+
+\begin{itemize}
+    \item \textbf{Focus on top-k singular values:} \\
+    In image compression and many applications, we only need the largest $k$ singular values. Power iteration efficiently finds the dominant singular vectors one by one, without computing the full SVD.
+    
+    \item \textbf{Simplicity and clarity:} \\
+    The algorithm is straightforward to implement in C/Python hybrid code and easy to understand for educational and report purposes.
+    
+    \item \textbf{Memory efficiency:} \\
+    Works on large matrices without storing full decompositions. Each step only requires vectors $u$ and $v$, not the full $U$ or $V$ matrices initially.
+    
+    \item \textbf{Deflation allows sequential computation:} \\
+    Once the top singular triplet is computed, deflation removes its contribution to find the next dominant singular value. This aligns perfectly with truncated SVD objectives.
+    
+    \item \textbf{Reasonable performance for moderate $k$:} \\
+    For applications like image compression, usually $k \ll n$, so power iteration is faster than full SVD.
+\end{itemize}
+
+\subsection{Why Other Algorithms Were Not Used}
+
+\begin{itemize}
+    \item \textbf{Full SVD (Golub--Reinsch method):} \\
+    Computes all singular values and vectors. \\
+    \textit{Reason not used:} Too computationally expensive for large matrices ($O(m n^2)$ if $m \ge n$). For image compression, we only need the top-$k$ singular values.
+    
+    \item \textbf{Lanczos / Arnoldi (Krylov subspace methods):} \\
+    Iterative methods to approximate several singular values at once, especially for large sparse matrices. \\
+    \textit{Reason not used:} More complex to implement than Power Iteration; requires careful handling for numerical stability; overkill for dense matrices of moderate size.
+    
+    \item \textbf{Randomized SVD:} \\
+    Uses random projections to approximate top-$k$ singular values. \\
+    \textit{Reason not used:} Produces approximate results which may reduce compression quality; requires additional parameter tuning; less suitable for an educational implementation.
+    
+    \item \textbf{Jacobi SVD:} \\
+    Very accurate and stable, but computationally expensive for large matrices. Computes all singular values while we only need the top-$k$. \\
+    \textit{Reason not used:} More complex to implement than Power Iteration.
+\end{itemize}
+
+% --- REQUIRED PACKAGES (Include these lines in your document's Preamble) ---
+% \usepackage{graphicx}
+% \usepackage{caption}
+% \usepackage{subcaption} 
+% --------------------------------------------------------------------------
+
+\section{Reconstructed Images for Different k}
+\subsection{einstein}
+
+\begin{figure}[H]
+ \centering
+
+	\includegraphics[width=0.6\textwidth]{../figs/einstein.jpg}
+	\caption*{Original Image}
+
+\end{figure}
+
+\begin{figure}[H]
+   \begin{subfigure}[b]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../figs/einstein_k_5.png} % replace with your actual k=5 image
+        \caption*{Reconstructed Image k=5}
+        \label{fig:k5}
+    \end{subfigure}
+    \hfill
+    % k = 20
+    \begin{subfigure}[b]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../figs/einstein_k_20.png} % replace with your actual k=20 image
+        \caption*{Reconstructed Image  k=20}
+        \label{fig:k20}
+    \end{subfigure}
+    \end{figure}
+
+\begin{figure}[H]
+\begin{subfigure}[b]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../figs/einstein_k_50.png} % replace with your actual k=5 image
+        \caption*{Reconstructed Image  k=50}
+        \label{fig:k5}
+    \end{subfigure}
+    \hfill
+    % k = 20
+    \begin{subfigure}[b]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../figs/einstein_k_100.png} % replace with your actual k=20 image
+        \caption*{Reconstructed Image  k=100}
+        \label{fig:k20}
+    \end{subfigure}
+    
+
+\end{figure}
+
+\begin{figure}[H]
+ \centering
+
+	\includegraphics[width=0.5\textwidth]{../figs/einstein_k_200.png}
+	\caption*{Reconstructed Image  k=200}
+
+\end{figure}
+\subsection{globe}
+
+\begin{figure}[H]
+ \centering
+
+	\includegraphics[width=0.6\textwidth]{../figs/globe.jpg}
+	\caption*{Original Image}
+
+\end{figure}
+
+\begin{figure}[H]
+   \begin{subfigure}[b]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../figs/globe_k_5.png} % replace with your actual k=5 image
+        \caption*{Reconstructed Image k=5}
+        \label{fig:k5}
+    \end{subfigure}
+    \hfill
+    % k = 20
+    \begin{subfigure}[b]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../figs/globe_k_20.png} % replace with your actual k=20 image
+        \caption*{Reconstructed Image  k=20}
+        \label{fig:k20}
+    \end{subfigure}
+    \end{figure}
+
+\begin{figure}[H]
+\begin{subfigure}[b]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../figs/globe_k_50.png} % replace with your actual k=5 image
+        \caption*{Reconstructed Image  k=50}
+        \label{fig:k5}
+    \end{subfigure}
+    \hfill
+    % k = 20
+    \begin{subfigure}[b]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../figs/globe_k_100.png} % replace with your actual k=20 image
+        \caption*{Reconstructed Image  k=100}
+        \label{fig:k20}
+    \end{subfigure}
+    
+
+\end{figure}
+
+\begin{figure}[H]
+ \centering
+
+	\includegraphics[width=0.5\textwidth]{../figs/globe_k_200.png}
+	\caption{Reconstructed Image  k=200}
+
+\end{figure}
+\subsection{greyscale}
+
+\begin{figure}[H]
+ \centering
+
+	\includegraphics[width=0.6\textwidth]{../figs/greyscale.png}
+	\caption{Original Image}
+
+\end{figure}
+
+\begin{figure}[H]
+   \begin{subfigure}[b]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../figs/greyscale_k_5.png} % replace with your actual k=5 image
+        \caption*{Reconstructed Image k=5}
+        \label{fig:k5}
+    \end{subfigure}
+    \hfill
+    % k = 20
+    \begin{subfigure}[b]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../figs/greyscale_k_20.png} % replace with your actual k=20 image
+        \caption*{Reconstructed Image  k=20}
+        \label{fig:k20}
+    \end{subfigure}
+    \end{figure}
+
+\begin{figure}[H]
+\begin{subfigure}[b]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../figs/greyscale_k_50.png} % replace with your actual k=5 image
+        \caption*{Reconstructed Image  k=50}
+        \label{fig:k5}
+    \end{subfigure}
+    \hfill
+    % k = 20
+    \begin{subfigure}[b]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../figs/greyscale_k_100.png} % replace with your actual k=20 image
+        \caption*{Reconstructed Image  k=100}
+        \label{fig:k20}
+    \end{subfigure}
+    
+
+\end{figure}
+
+\begin{figure}[H]
+ \centering
+
+	\includegraphics[width=0.5\textwidth]{../figs/greyscale_k_200.png}
+	\caption{Reconstructed Image  k=200}
+
+\end{figure}
+
+
+
+
+\section{ Error Analysis}
+
+
+This section presents the Frobenius norm error $\|A - A_k\|_F$ between the original image $A$ and its rank-$k$ approximation $A_k$ obtained from the SVD-based compression.  
+The error measures how well the compressed image retains the original information.  
+As $k$ increases, more singular values are preserved, improving accuracy but reducing compression efficiency.
+\subsection{einstein}
+
+\begin{table}[H]    
+      \centering
+      \input{tables/einstein.tex}
+      \caption*{einstein}
+      \label{}
+    \end{table}
+
+
+
+For the Einstein image, the approximation error decreases sharply as $k$ increases.  
+At low ranks ($k=5$ or $20$), significant detail is lost, but after $k=100$, the image closely matches the original.  
+This shows that the dominant singular values capture most of the important image features.
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.7\textwidth]{../figs/einstein_error_vs_k.png}
+\caption{Plot of $k$ vs $\|A - A_k\|_F$ for einstein}
+\end{figure}
+
+
+\subsection{globe}
+
+
+\begin{table}[H]    
+      \centering
+      \input{tables/globe.tex}
+      \caption*{globe}
+      \label{}
+    \end{table}
+
+
+The globe image shows a gradual error reduction with increasing $k$.  
+Since it contains smoother regions and less sharp contrast, it achieves good visual quality even for $k=50$.  
+Beyond $k=100$, the improvement becomes less noticeable, indicating optimal compression around this range.
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.5\textwidth]{../figs/globe_error_vs_k.png}
+\caption*{Plot of $k$ vs $\|A - A_k\|_F$ for globe}
+\end{figure}
+
+
+\subsection{greyscale}
+
+
+\begin{table}[H]    
+      \centering
+      \input{tables/greyscale.tex}
+      \caption*{greyscale}
+      \label{}
+    \end{table}
+
+
+For the greyscale image, the Frobenius error drops rapidly up to $k=50$, after which the curve flattens.  
+This indicates that most structural information is captured by the first few singular values, making it highly compressible without much visual loss.
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.7\textwidth]{../figs/greyscale_error_vs_k.png}
+\caption*{Plot of $k$ vs $\|A - A_k\|_F$ for greyscale}
+\end{figure}
+
+\bigskip
+Overall, the Power Iteration with Deflation approach efficiently reconstructs images with low error using only a small number of singular values.
+
+\
+\section{Discussion of Trade-offs and Reflections}
+
+The implementation of image compression using Truncated SVD through Power Iteration with Deflation involves several trade-offs between computational efficiency, accuracy, and implementation simplicity.
+
+\subsection{Trade-offs}
+\begin{itemize}
+    \item \textbf{Accuracy vs. Compression:}  
+    Increasing the rank $k$ improves image quality but reduces compression efficiency.  
+    For small $k$, the compressed image loses fine details, while for large $k$, the compression ratio decreases as storage requirements increase.
+    
+    \item \textbf{Speed vs. Precision:}  
+    Power Iteration provides an efficient way to estimate dominant singular values without performing a full SVD.  
+    However, it may take more iterations for convergence when singular values are close to each other, slightly affecting runtime.
+    
+    \item \textbf{Simplicity vs. Numerical Stability:}  
+    The algorithm is simple to implement and integrates well with C–Python hybrid execution.  
+    Yet, compared to methods like Lanczos or Jacobi SVD, it is less numerically stable for extremely large or ill-conditioned matrices.
+    
+    \item \textbf{Sequential Computation:}  
+    The deflation step allows computation of each singular triplet sequentially, which is ideal for moderate image sizes.  
+    However, it can accumulate small rounding errors over many iterations.
+\end{itemize}
+
+\subsection{Reflections on Implementation Choice}
+The Power Iteration with Deflation method was chosen primarily for its balance between simplicity and effectiveness.  
+It avoids the heavy computational load of full SVD while still achieving high-quality image reconstruction for small to medium values of $k$.  
+The hybrid implementation in Python and C allowed efficient matrix operations while maintaining clarity and modularity in the code.  
+
+From experimentation, it was observed that:
+\begin{itemize}
+    \item Most image features are captured within the first few singular values.
+    \item Beyond $k=100$, the error improvement becomes marginal.
+    \item The approach provides a clear demonstration of how SVD separates structure and detail in an image.
+\end{itemize}
+
+Overall, the method successfully demonstrates the concept of low-rank approximation for image compression.  
+It balances performance and interpretability, making it a suitable algorithmic choice for both educational and practical contexts.
+\end{document}
