@@ -1,47 +1,35 @@
-#  Truncated SVD Image Compression (C/Python Hybrid)
+# Image Compression Using Truncated SVD
 
-This project uses a hybrid approach for image compression: the high-performance Singular Value Decomposition (SVD) algorithm is implemented in **C**, and **Python** handles image input/output (I/O) and visualization via `ctypes`.
+## Overview
+This project implements **Image Compression using Truncated Singular Value Decomposition (SVD)**. 
+The goal is to approximate a grayscale image matrix by retaining only the top `k` singular values and corresponding singular vectors. 
+This reduces the amount of data required to represent the image while preserving most of its important visual information.
 
----
-
-##  Project Structure Map
-
-This structure adheres to the assignment's requirements, showing the location for all source files, the compiled library, and the input/output figures.
-
-SoftwareAssignment/
-├── codes/
-│   ├── c_libs/
-│   │   └── svd_c_lib.so        <-- Compiled C Shared Library (Output of Step 2)
-│   └── hybrid_c_python/
-│       ├── c_backend/
-│       │   └── svd_c_lib.c     <-- C Source Code (SVD Algorithm)
-│       └── python_frontend/
-│           └── main.py         <-- Python Driver (I/O, Plotting)
-└── figs/
-    ├── einstein.jpg            <-- Input Image (Place your image here)
-    ├── einstein_k_10.png       <-- Reconstructed Images (Output of Step 3)
-    ├── einstein_k_50.png       <-- ... and all other k-ranks
-    └── einstein_error_vs_k.png <-- Error Plot (Output of Step 3)
+The algorithm uses the **Power Iteration with Deflation** method to iteratively compute the top singular values and vectors, avoiding the computational cost of a full SVD. 
+It demonstrates how mathematical concepts from linear algebra can be applied to real-world applications like image compression.
 
 ---
 
-## How to Run the Project
+## Key Features
+- **Truncated SVD implementation** for image compression. 
+- **Power Iteration with Deflation** used to compute top `k` singular values. 
+- **C + Python hybrid structure** for efficiency. 
+- Supports large grayscale images.  
+- Computes and reports **Frobenius norm error** (`‖A - A_k‖_F`). 
+- Generates **plots of k vs error** to visualize reconstruction accuracy. 
+- Saves reconstructed images and error tables for multiple ranks.
 
-### Step 1: Place Image
+---
 
-Ensure your target image (e.g., `einstein.jpg`) is placed inside the **`figs/`** directory.
-
-### Step 2: Compile the C Library (Critical Step)
-
-You must compile the C source code into a shared library and save it in the correct location (`codes/c_libs/`).
-
-**Navigate** to the `c_backend/` directory and execute the following command:
-
-```bash
-# Execute this command from the: ./codes/hybrid_c_python/c_backend/
-gcc -shared -o ../../c_libs/svd_c_lib.so svd_c_lib.c -lm -fPIC
-
-###  Step 3 :Execute the Python Script
-
-# Execute this command from the: ./codes/hybrid_c_python/python_frontend/
-python3 main.py
+## Folder Structure
+├── Software/
+│ ├── codes/
+│ │ ├── main.py # Python driver code
+│ │ ├── svd_power.c # C implementation of Power Iteration
+│ │ ├── svd_power.h # Header file
+│ │ ├── Makefile # For building shared library
+│ │ └── utils.py # Helper functions for image I/O
+│ ├── figs/ # Original and reconstructed images, plots
+│ ├── tables/ # Tables of Frobenius norm error
+│ └── report/ # LaTeX report source
+└── README.md
